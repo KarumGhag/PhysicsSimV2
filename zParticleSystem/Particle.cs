@@ -42,6 +42,13 @@ public class Particle
         EdgeCheck();
     }
 
+    public void PopulateCells()
+    {
+        gridX = (int)position.X / Cell.cellSize;
+        gridY = (int)position.Y / Cell.cellSize;
+
+    }
+
     private void EdgeCheck()
     {
         if (position.X > Global.screenWidth)

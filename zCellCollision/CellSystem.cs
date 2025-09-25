@@ -10,7 +10,7 @@ public class Cell
 {
     public static int cellSize = 20;
     public List<Particle> particles = new List<Particle>();
-
+    public bool empty;
 }
 
 public class CellManager
@@ -40,6 +40,18 @@ public class CellManager
             for (int y = 0; y < rows; y++)
             {
                 grid[x, y].particles.Clear();
+            }
+        }
+    }
+
+    public void CellEmptyCheck()
+    {
+        for (int x = 0; x < cols; x++)
+        {
+            for (int y = 0; y < rows; y++)
+            {
+                if (grid[x, y].particles.Count() != 0) grid[x, y].empty = false;
+                else grid[x, y].empty = true;
             }
         }
     }

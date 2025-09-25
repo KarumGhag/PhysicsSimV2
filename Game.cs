@@ -34,8 +34,14 @@ public class Game
             Raylib.DrawText("Frame Number: " + Convert.ToString(frame), 10, 70, 25, Color.White);
             Raylib.DrawText("Particles: " + Convert.ToString(Global.particles.Count()), 10, 100, 25, Color.White);
 
+            // Drawing and physics
             foreach (Particle particle in Global.particles) Raylib.DrawCircleV(particle.position, particle.radius, particle.color);
             foreach (Particle particle in Global.particles) particle.Update(Raylib.GetFrameTime());
+
+            // Collision
+            Global.cellManager.ClearCells();
+            foreach (Particle particle in Global.particles) particle.PopulateCells();
+            Global.cellManager.CellEmptyCheck();
 
 
             Raylib.EndDrawing();
