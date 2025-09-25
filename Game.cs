@@ -2,7 +2,7 @@ using Raylib_cs;
 using GlobalInfo;
 using VerletParticle;
 using System.Numerics;
-using System.Runtime.InteropServices;
+using CellSystem;
 
 namespace GameClass;
 
@@ -13,11 +13,12 @@ public class Game
         Raylib.InitWindow(Global.screenWidth,Global.screenHeight, "Physics Simulation");
         Raylib.SetTargetFPS(121);
 
-        Random random = new Random();
 
-        for (int i = 0;  i < 1000; i++) new Particle(Global.RandomVector(0, Global.screenWidth, 0, Global.screenHeight), Global.RandomVector(-10, 10, -10, 10));
+        for (int i = 0;  i < 1; i++) new Particle(Global.RandomVector(0, Global.screenWidth, 0, Global.screenHeight), Global.RandomVector(-10, 10, -10, 10));
 
         int frame = 0;
+
+        Global.cellManager = new CellManager();
 
         while (!Raylib.WindowShouldClose())
         {

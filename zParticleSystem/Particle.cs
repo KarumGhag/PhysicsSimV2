@@ -1,6 +1,7 @@
 using System.Numerics;
 using GlobalInfo;
 using Raylib_cs;
+using CellSystem;
 
 namespace VerletParticle;
 
@@ -16,11 +17,15 @@ public class Particle
     private static float bounceDamping = 0.9f;
     private static float friction = 0.9999f;
 
+
+    public int gridX;
+    public int gridY;
+
     public Particle(Vector2 startPosition, Vector2 startVelocity)
     {
         position = startPosition;
         oldPosition = position - startVelocity;
-        velocity = startVelocity; 
+        velocity = startVelocity;
 
         Global.particles.Add(this);
     }
@@ -32,8 +37,7 @@ public class Particle
         oldPosition = position;
 
         position += velocity * friction;
-        position.Y += 1750 * dt * dt; 
-
+        position.Y += 1750 * dt * dt;
 
         EdgeCheck();
     }

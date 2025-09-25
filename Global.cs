@@ -1,5 +1,6 @@
 using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
+using CellSystem;
 using Raylib_cs;
 using VerletParticle;
 
@@ -12,6 +13,10 @@ public static class Global
     public static Color backgroundColour = Color.Black;
 
     public static List<Particle> particles = new List<Particle>();
+
+
+    public static CellManager cellManager;
+
 
     public static Vector2 RandomVector(int minX, int maxX, int minY, int maxY)
     {
