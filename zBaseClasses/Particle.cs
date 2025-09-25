@@ -13,7 +13,7 @@ public class Particle
     public int radius = 10;
     public Color color = Color.Red;
 
-    private static float bounceDamping = 0.8f;
+    private static float bounceDamping = 0.9f;
     private static float friction = 0.9999f;
 
     public Particle(Vector2 startPosition, Vector2 startVelocity)

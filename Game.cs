@@ -13,12 +13,10 @@ public class Game
         Raylib.InitWindow(Global.screenWidth,Global.screenHeight, "Physics Simulation");
         Raylib.SetTargetFPS(121);
 
+        Random random = new Random();
 
-        for (int i = 0; i < 5000; i++)
-        {
-            Random random = new Random(Guid.NewGuid().GetHashCode());
-            new Particle(new Vector2(Global.screenWidth / 2, Global.screenHeight / 2), new Vector2(random.Next(-10, 10), random.Next(-10, 10)));
-        }
+        for (int i = 0;  i < 1000; i++) new Particle(Global.RandomVector(0, Global.screenWidth, 0, Global.screenHeight), Global.RandomVector(-10, 10, -10, 10));
+
         int frame = 0;
 
         while (!Raylib.WindowShouldClose())
