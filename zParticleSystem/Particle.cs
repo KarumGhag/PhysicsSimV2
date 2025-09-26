@@ -2,6 +2,8 @@ using System.Numerics;
 using GlobalInfo;
 using Raylib_cs;
 using CellSystem;
+using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel;
 
 namespace VerletParticle;
 
@@ -27,6 +29,8 @@ public class Particle
         oldPosition = position - startVelocity;
         velocity = startVelocity;
 
+        color = Global.HsvToRgb(new Random().Next(0, 360), new Random().Next(0, 255));
+
         Global.particles.Add(this);
     }
 
@@ -44,8 +48,11 @@ public class Particle
 
     public void PopulateCells()
     {
-        gridX = (int)position.X / Cell.cellSize;
-        gridY = (int)position.Y / Cell.cellSize;
+        gridX = Math.Clamp((int)Math.Floor(position.X / Cell.cellSize), 0, Global.cellManager.cols - 1);
+        gridY = Math.Clamp((int)Math.Floor(position.Y / Cell.cellSize), 0, Global.cellManager.rows - 1);
+
+        Global.cellManager.grid[gridX, gridY].particles.Add(this);
+        Global.cellManager.grid[gridX, gridY].isEmpty = false;
 
     }
 

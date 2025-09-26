@@ -14,7 +14,7 @@ public class Game
         Raylib.SetTargetFPS(121);
 
 
-        for (int i = 0;  i < 1; i++) new Particle(Global.RandomVector(0, Global.screenWidth, 0, Global.screenHeight), Global.RandomVector(-10, 10, -10, 10));
+        for (int i = 0;  i < 50; i++) new Particle(Global.RandomVector(0, Global.screenWidth, 0, Global.screenHeight), Global.RandomVector(-10, 10, -10, 10));
 
         int frame = 0;
 
@@ -41,8 +41,6 @@ public class Game
             // Collision
             Global.cellManager.ClearCells();
             foreach (Particle particle in Global.particles) particle.PopulateCells();
-            Global.cellManager.CellEmptyCheck();
-
 
             Raylib.EndDrawing();
         }

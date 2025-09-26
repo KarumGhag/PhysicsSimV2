@@ -73,11 +73,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\karum\\Desktop\\0Vscode\\c#\\RaylibCS\\physicssimv2\\physicssimv2.csproj",
+      "projectUniqueName": "C:\\Users\\karum\\Desktop\\0Vscode\\c#\\RaylibCS\\PhysicsSimV2\\physicssimv2.csproj",
       "projectName": "physicssimv2",
-      "projectPath": "C:\\Users\\karum\\Desktop\\0Vscode\\c#\\RaylibCS\\physicssimv2\\physicssimv2.csproj",
+      "projectPath": "C:\\Users\\karum\\Desktop\\0Vscode\\c#\\RaylibCS\\PhysicsSimV2\\physicssimv2.csproj",
       "packagesPath": "C:\\Users\\karum\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\karum\\Desktop\\0Vscode\\c#\\RaylibCS\\physicssimv2\\obj\\",
+      "outputPath": "C:\\Users\\karum\\Desktop\\0Vscode\\c#\\RaylibCS\\PhysicsSimV2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
